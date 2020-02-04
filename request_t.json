@@ -1,0 +1,23 @@
+{
+  "operationName": "getGrHouses",
+  "variables": {
+    "regionId": "1",
+    "developerId": null,
+    "search": "",
+    "objectType": "H"
+  },
+  "query": "query getGrHouses($search: String, $developerId: String, $regionId: Int, $objectType: String) {
+      houses: selectGrHouses(query: $search, developer: $developerId, region: $regionId, objectType: $objectType) {
+        hits {
+          b2c_object_id
+          object_group_id
+          latitude
+          longitude
+          src
+          house_cnt
+          __typename
+        }
+        __typename
+      }
+    }"
+}
